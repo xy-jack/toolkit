@@ -22,7 +22,7 @@ public class SnowFlakeUtil {
     /** 开始时间截 (2015-01-01) */
     private final long twepoch = 1420041600000L;
 
-    /** 机器id所占的位数 */
+    /** 机器id所占的位数 （单位是位时的长度）*/
     private final long workerIdBits = 5L;
 
     /** 数据标识id所占的位数 */
@@ -136,6 +136,40 @@ public class SnowFlakeUtil {
     protected long timeGen() {
         return System.currentTimeMillis();
     }
+
+
+    /**
+     * 调用该方法，得到分布式唯一ID
+     * @return key type is @{@link Long}.
+     */
+   /* @Override
+    public synchronized Number generateKey() {
+        long currentMillis = timeService.getCurrentMillis();
+        // 每次取分布式唯一ID的时间不能少于上一次取时的时间
+        Preconditions.checkState(lastTime <= currentMillis, "Clock is moving backwards, last time is %d milliseconds, current time is %d milliseconds", lastTime, currentMillis);
+        // 如果同一毫秒范围内，那么自增，否则从0开始
+        if (lastTime == currentMillis) {
+            // 如果自增后的sequence值超过4096，那么等待直到下一个毫秒
+            if (0L == (sequence = ++sequence & SEQUENCE_MASK)) {
+                currentMillis = waitUntilNextTime(currentMillis);
+            }
+        } else {
+            sequence = 0;
+        }
+        // 更新lastTime的值，即最后一次获取分布式唯一ID的时间
+        lastTime = currentMillis;
+        // 从这里可知分布式唯一ID的组成部分；
+        return ((currentMillis - EPOCH) << TIMESTAMP_LEFT_SHIFT_BITS) | (workerId << WORKER_ID_LEFT_SHIFT_BITS) | sequence;
+    }*/
+
+    // 获取下一毫秒的方法：死循环获取当前毫秒与lastTime比较，直到大于lastTime的值；
+    /*private long waitUntilNextTime(final long lastTime) {
+        long time = timeService.getCurrentMillis();
+        while (time <= lastTime) {
+            time = timeService.getCurrentMillis();
+        }
+        return time;
+    }*/
 
     //==============================Test=============================================
     /** 测试 */

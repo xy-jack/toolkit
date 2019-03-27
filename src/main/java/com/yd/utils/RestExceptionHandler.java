@@ -19,7 +19,6 @@ import javax.servlet.http.HttpServletResponse;
 /**
  * 全局异常处理类
  *
- * @author Iker
  * @date 2017-09-22 12:15
  */
 @ControllerAdvice(annotations = RestController.class)
