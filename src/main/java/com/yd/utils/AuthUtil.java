@@ -14,8 +14,6 @@ import java.util.Date;
 /**
  * (描述用途)
  *
- * @author zhengchao
- * @date 2017-12-29 下午 17:46
  */
 public class AuthUtil {
 
