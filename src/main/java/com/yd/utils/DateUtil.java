@@ -18,8 +18,7 @@ public class DateUtil {
 	/**
 	 * yyyyMMdd日期格式化工具
 	 */
-	public static final SimpleDateFormat DF_HHmmss = new SimpleDateFormat(
-			HHmmss);
+	public static final SimpleDateFormat DF_HHmmss = new SimpleDateFormat(HHmmss);
 	/**
 	 * yyyyMMdd日期格式化样式
 	 */

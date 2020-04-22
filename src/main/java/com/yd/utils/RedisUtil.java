@@ -38,7 +38,7 @@ public class RedisUtil {
 	{
 		Properties p = new Properties();
 		try{
-			InputStream in = new FileInputStream(RedisUtil.class.getClassLoader().getResource("/").getPath()+("redis.properties"));
+			InputStream in = new FileInputStream(RedisSyncUtil.class.getClassLoader().getResource("/").getPath()+("redis.properties"));
 			p.load(in);
 		}catch(Exception e){
 			e.printStackTrace();

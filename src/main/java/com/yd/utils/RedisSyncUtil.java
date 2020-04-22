@@ -12,7 +12,7 @@ import java.util.Collections;
  * @author    YD
  * @return
  */
-public class RedisTool {
+public class RedisSyncUtil {
 
     private static final String LOCK_SUCCESS = "OK";
     private static final String SET_IF_NOT_EXIST = "NX";
