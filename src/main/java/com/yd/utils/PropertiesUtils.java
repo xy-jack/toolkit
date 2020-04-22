@@ -7,7 +7,6 @@ import java.util.Properties;
 import org.apache.log4j.Logger;
 
 /**
- * @author Administrator
  * 获取资源文件工具类
  */
 public class PropertiesUtils {
